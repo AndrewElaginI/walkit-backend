@@ -22,7 +22,7 @@ export class UsersController {
 
   @Post()
   createUser(@Request() req): string {
-    return `User created ${req.body.login}`;
+    return `User created Login - ${req.body.login} Password - ${req.body.password}`;
   }
 
   @Put('/:id')
