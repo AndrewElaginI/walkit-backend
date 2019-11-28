@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/1234
+GET http://localhost:3000/users/1
 
 ###
 
@@ -10,7 +10,7 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "login": "TEst User",
+  "login": "TEst User12334",
   "password": "1234"
 }
 
