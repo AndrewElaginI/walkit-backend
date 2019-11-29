@@ -1,4 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
+import { Geolocation } from '../geolocation/geolocation.entity';
+
+export enum UserRole {
+  ADMIN = 'admin',
+  MANAGER = 'manager',
+  EMPLOYEE = 'employee',
+}
 
 @Entity()
 export class User {
@@ -10,4 +23,15 @@ export class User {
 
   @Column()
   password: string;
+
+  @Column({
+    type: 'enum',
+    enum: UserRole,
+    default: UserRole.EMPLOYEE,
+  })
+  role: UserRole;
+
+  @ManyToMany(type => Geolocation)
+  @JoinTable()
+  geolocations: Geolocation[];
 }

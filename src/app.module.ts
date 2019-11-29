@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { User } from './user/user.entity';
+import { Geolocation } from './geolocation/geolocation.entity';
+import { GeolocationModule } from './geolocation/geolocation.module';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { User } from './user/user.entity';
       username: 'postgres',
       password: 'postgres',
       database: 'test',
-      entities: [User],
+      entities: [User, Geolocation],
       synchronize: true,
     }),
     UserModule,
+    GeolocationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

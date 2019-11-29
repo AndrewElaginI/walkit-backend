@@ -10,8 +10,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "login": "Test_User",
-  "password": "4321"
+  "login": "manager",
+  "password": "test1234",
+  "role": "manager"
 }
 
 ###
@@ -25,4 +26,36 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/2
+DELETE http://localhost:3000/users/4
+
+###
+
+
+GET http://localhost:3000/geolocation
+
+###
+
+GET http://localhost:3000/geolocation/2
+
+###
+
+POST http://localhost:3000/geolocation
+Content-Type: application/json
+
+{
+  "latitude": "49.978694499999996",
+  "longitude": "36.2088506"
+}
+
+###
+
+PUT http://localhost:3000/geolocation/2
+Content-Type: application/json
+
+{
+  "longitude": "37.2088506"
+}
+
+###
+
+DELETE http://localhost:3000/geolocation/1

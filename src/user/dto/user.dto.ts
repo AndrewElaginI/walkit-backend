@@ -1,4 +1,5 @@
-import { IsDefined, IsString, IsNumberString } from 'class-validator';
+import { IsDefined, IsString } from 'class-validator';
+import { UserRole } from '../user.entity';
 
 export class UserDto {
   @IsString()
@@ -8,4 +9,8 @@ export class UserDto {
   @IsString()
   @IsDefined()
   password: string;
+
+  // @IsString()
+  // @IsDefined()
+  // role: UserRole;
 }
