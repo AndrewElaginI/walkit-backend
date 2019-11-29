@@ -37,10 +37,11 @@ export class UserController {
   @Put(':id')
   async updateUser(@Body() userData: UserDto, @Param('id') id: string) {
     const updatedUser = this.userService.updateUser(userData, id);
+    return updatedUser;
   }
 
   @Delete('/:id')
-  deleteUser(@Request() req): string {
-    return `User ${req.params.id} deleted`;
+  async deleteUser(@Param('id') id: string) {
+    await this.userService.removeUser(id);
   }
 }

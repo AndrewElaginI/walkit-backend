@@ -10,14 +10,19 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "login": "TEst User12334",
-  "password": "1234"
+  "login": "Test_User",
+  "password": "4321"
 }
 
 ###
 
-PUT http://localhost:3000/users/1234
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "password": "5555"
+}
 
 ###
 
-DELETE http://localhost:3000/users/1234
+DELETE http://localhost:3000/users/2
