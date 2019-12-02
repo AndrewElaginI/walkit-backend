@@ -28,9 +28,9 @@ export class AppController {
     return this.authService.login(body);
   }
 
-  // @UseGuards(AuthGuard('jwt'))
+  @UseGuards(AuthGuard('jwt'))
   @Get('profile')
   getProfile(@Request() req) {
-    return req;
+    return req.user;
   }
 }
