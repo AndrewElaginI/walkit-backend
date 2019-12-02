@@ -1,8 +1,27 @@
+
+### Auth Login
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "login": "admin",
+  "password": "test1234"
+}
+
+### Auth access
+
+GET http://localhost:3000/profile
+Content-Type: application/json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW4.pwTe9-T-2fy2Vn_ygKTwJePF0mpR8SsMWCHALFtcgoY"
+
+### User
+
 GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/1
+GET http://localhost:3000/users/14
 
 ###
 
@@ -28,8 +47,7 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/users/4
 
-###
-
+### Geolocation
 
 GET http://localhost:3000/geolocation
 
@@ -58,4 +76,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/geolocation/1
+DELETE http://localhost:3000/geolocation/11

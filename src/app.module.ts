@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { User } from './user/user.entity';
 import { Geolocation } from './geolocation/geolocation.entity';
 import { GeolocationModule } from './geolocation/geolocation.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { GeolocationModule } from './geolocation/geolocation.module';
     }),
     UserModule,
     GeolocationModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
