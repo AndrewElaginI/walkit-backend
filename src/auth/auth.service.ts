@@ -12,14 +12,14 @@ export class AuthService {
   ) {}
 
   async validateUser(payload: JwtPayload): Promise<any> {
-    const user = await this.usersService.findUserBy({ login: payload });
+    const user = await this.usersService.findUserBy({ email: payload });
     return user;
   }
 
-  async login({ login, password }): Promise<{ data: { token: string } }> {
-    const user: User = await this.usersService.findUserBy({ login });
+  async login({ email, password }): Promise<{ data: { token: string } }> {
+    const user: User = await this.usersService.findUserBy({ email });
     if (user && user.password === password) {
-      const token: string = this.jwtService.sign(user.login);
+      const token: string = this.jwtService.sign(user.email);
       return { data: { token } };
     }
     throw new UnauthorizedException();
