@@ -16,6 +16,13 @@ export class UserService {
     return users;
   }
 
+  async findSpecificUsers(params): Promise<User[]> {
+    const users = await this.userRepository.find({
+      where: params,
+    });
+    return users;
+  }
+
   async findUserBy(params): Promise<User> {
     return await this.userRepository.findOne({
       where: params,

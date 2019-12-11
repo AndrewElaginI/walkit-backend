@@ -23,14 +23,15 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('auth/login')
-  async login(@Body() body) {
-    return this.authService.login(body);
-  }
+  // @Post('auth/login')
+  // async login(@Body() body) {
+  //   return this.authService.login(body);
+  // }
 
-  @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  getProfile(@Request() req) {
-    return req.user;
-  }
+  // @UseGuards(AuthGuard('jwt'))
+  // @Get('profile')
+  // getProfile(@Request() req) {
+  //   console.log('req.user', req.user);
+  //   return req.user;
+  // }
 }

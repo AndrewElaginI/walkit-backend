@@ -5,19 +5,35 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "email": "admin",
+  "email": "admin@gmail.com",
   "password": "test1234"
 }
 
 ### Auth access
 
-GET http://localhost:3000/profile
+GET http://localhost:3000/auth/profile
 Content-Type: application/json
-Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW4.pwTe9-T-2fy2Vn_ygKTwJePF0mpR8SsMWCHALFtcgoY"
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
 
-### User
+### User =====
 
-GET http://localhost:3000/users
+GET http://localhost:3000/auth
+Content-Type: application/json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
+
+### 
+
+GET http://localhost:3000/users/role?role=employee
+
+### 
+
+POST http://localhost:3000/users/useList
+Content-Type: application/json
+
+{
+   "role": "admin",
+   "userType": "manager"
+}
 
 ###
 
@@ -29,9 +45,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "login": "manager",
+  "email": "employee1@gmail.com",
   "password": "test1234",
-  "role": "manager"
+  "role": "employee"
 }
 
 ###
@@ -45,9 +61,9 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/4
+DELETE http://localhost:3000/users/17
 
-### Geolocation
+### Geolocation =====
 
 GET http://localhost:3000/geolocation
 
@@ -76,4 +92,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/geolocation/11
+DELETE http://localhost:3000/geolocation/7
