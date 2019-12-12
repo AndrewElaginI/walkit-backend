@@ -2,8 +2,8 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  ManyToMany,
   JoinTable,
+  OneToMany,
 } from 'typeorm';
 import { Geolocation } from '../geolocation/geolocation.entity';
 
@@ -31,7 +31,9 @@ export class User {
   })
   role: UserRole;
 
-  @ManyToMany(type => Geolocation)
-  @JoinTable()
+  @OneToMany(
+    type => Geolocation,
+    geolocation => geolocation.user,
+  )
   geolocations: Geolocation[];
 }

@@ -22,14 +22,12 @@ export class AuthController {
 
   @Post('login')
   async login(@Body() body) {
-    console.log('Login body', body);
     return this.authService.login(body);
   }
 
   @UseGuards(AuthGuard('jwt'))
   @Get('profile')
   getProfile(@Request() req) {
-    console.log('req.user', req.user);
     return req.user;
   }
 }

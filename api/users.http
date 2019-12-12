@@ -17,23 +17,9 @@ Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ9
 
 ### User =====
 
-GET http://localhost:3000/auth
+GET http://localhost:3000/users
 Content-Type: application/json
 Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
-
-### 
-
-GET http://localhost:3000/users/role?role=employee
-
-### 
-
-POST http://localhost:3000/users/useList
-Content-Type: application/json
-
-{
-   "role": "admin",
-   "userType": "manager"
-}
 
 ###
 
@@ -77,8 +63,9 @@ POST http://localhost:3000/geolocation
 Content-Type: application/json
 
 {
-  "latitude": "49.978694499999996",
-  "longitude": "36.2088506"
+  "latitude": "49.968694499999996",
+  "longitude": "36.2088506",
+  "user": "3"
 }
 
 ###
@@ -92,4 +79,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/geolocation/7
+DELETE http://localhost:3000/geolocation/4
