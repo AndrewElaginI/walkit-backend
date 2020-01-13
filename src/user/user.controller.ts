@@ -77,13 +77,18 @@ export class UserController {
   }
 
   @Put(':id')
+  @UseGuards(AuthGuard('jwt'))
+  @Roles(UserRole.ADMIN, UserRole.MANAGER)
   async updateUser(@Body() userData: UserDto, @Param('id') id: string) {
     const updatedUser = this.userService.updateUser(userData, id);
     return updatedUser;
   }
 
   @Delete('/:id')
+  @UseGuards(AuthGuard('jwt'))
+  @Roles(UserRole.ADMIN)
   async deleteUser(@Param('id') id: string) {
     await this.userService.removeUser(id);
+    return 'DELETED ' + id;
   }
 }

@@ -15,11 +15,11 @@ GET http://localhost:3000/auth/profile
 Content-Type: application/json
 Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
 
-### User =====
+### User =====================
 
 GET http://localhost:3000/users
 Content-Type: application/json
-Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
 
 ###
 
@@ -47,7 +47,9 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/users/17
+DELETE http://localhost:3000/users/43
+Content-Type: application/json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.YWRtaW5AZ21haWwuY29t.8TN4RKVN7IuxcQ98XurJ77_SKXg49OWxxvHUaINUYDs"
 
 ### Geolocation =====
 
